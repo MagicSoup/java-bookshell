@@ -26,6 +26,7 @@
         <code.coverage.exclusions>
             **/com/magicsoup/spring/data/SpringDataApplication.java
         </code.coverage.exclusions>
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
     </properties>
 
     <dependencies>
@@ -140,11 +141,19 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco.version}</version>
                         <executions>
                             <execution>
-                                <id>prepare-agent</id>
+                                <id>jacoco-initialize</id>
                                 <goals>
                                     <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>jacoco-site</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>report</goal>
                                 </goals>
                             </execution>
                         </executions>
@@ -169,6 +178,7 @@
                     <plugin>
                         <groupId>org.sonarsource.scanner.maven</groupId>
                         <artifactId>sonar-maven-plugin</artifactId>
+                        <version>${sonar.version}</version>
                         <executions>
                             <execution>
                                 <id>sonar</id>
