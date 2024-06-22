@@ -15,7 +15,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "author")
-public abstract class AuthorEntity {
+public class AuthorEntity {
 
     /**
      * Uuid string.
