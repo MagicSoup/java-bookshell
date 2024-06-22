@@ -1,8 +1,31 @@
+server:
+  port: 8080
 spring:
-    application:
-      name: SpringData
+  application:
+    name: SpringData
+  datasource:
+    url: jdbc:h2:mem:spring_data_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE;DATABASE_TO_UPPER=false;
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    url: ${spring.datasource.url}INIT=RUNSCRIPT FROM 'classpath:db/init/init.sql';
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    schemas: PUBLIC
+    locations: classpath:db/migration
 logging:
   level:
     root: info
-    org.springframework: info
+    org:
+      springframework: info
+      hibernate: info
+      flywaydb: info
+      h2: info
     com.magicsoup: info
