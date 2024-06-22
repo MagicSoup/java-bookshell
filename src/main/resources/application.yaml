@@ -1,0 +1,8 @@
+spring:
+    application:
+      name: SpringData
+logging:
+  level:
+    root: info
+    org.springframework: info
+    com.magicsoup: info
