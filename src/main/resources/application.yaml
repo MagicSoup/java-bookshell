@@ -9,23 +9,18 @@ spring:
     password:
     driverClassName: org.h2.Driver
   jpa:
-    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
-  flyway:
-    enabled: true
-    url: ${spring.datasource.url}INIT=RUNSCRIPT FROM 'classpath:db/init/init.sql';
-    user: ${spring.datasource.username}
-    password: ${spring.datasource.password}
-    schemas: PUBLIC
-    locations: classpath:db/migration
+    show-sql: true
 logging:
   level:
     root: info
     org:
       springframework: info
       hibernate: info
-      flywaydb: info
       h2: info
     com.magicsoup: info

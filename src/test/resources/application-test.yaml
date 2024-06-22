@@ -10,12 +10,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-#  flyway:
-#    url: ${spring.datasource.url}INIT=RUNSCRIPT FROM 'classpath:db/init/init.sql';
-#    user: ${spring.datasource.username}
-#    password: ${spring.datasource.password}
-#    schemas: PUBLIC
-#    locations: classpath:db/migration, classpath:db/specific/${spring.jooq.sql-dialect}
 logging:
   level:
     root: info

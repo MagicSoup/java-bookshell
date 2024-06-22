@@ -1,151 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.magicsoup.spring.data</groupId>
-	<artifactId>SpringData</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringData</name>
-	<description>Example of different ways of managing datas throught spring framework</description>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.magicsoup.spring.data</groupId>
+    <artifactId>SpringData</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>SpringData</name>
+    <description>Example of different ways of managing datas throught spring framework</description>
 
-	<properties>
-		<java.version>21</java.version>
-		<!-- dependencies versions -->
-		<!-- plugins versions -->
-		<sonar.version>3.10.0.2594</sonar.version>
-		<jacoco.version>0.8.11</jacoco.version>
-		<surefire.version>2.22.2</surefire.version>
-		<!-- sonar plugins-->
-		<code.coverage.exclusions>
-			**/com/magicsoup/spring/data/SpringDataApplication.java
-		</code.coverage.exclusions>
-		<aggregate.report.dir>librairy-test/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
-	</properties>
+    <properties>
+        <java.version>21</java.version>
+        <!-- dependencies versions -->
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <!-- plugins versions -->
+        <sonar.version>3.10.0.2594</sonar.version>
+        <jacoco.version>0.8.11</jacoco.version>
+        <surefire.version>2.22.2</surefire.version>
+        <!-- sonar plugins-->
+        <code.coverage.exclusions>
+            **/com/magicsoup/spring/data/SpringDataApplication.java
+        </code.coverage.exclusions>
+        <aggregate.report.dir>librairy-test/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
+    </properties>
 
-	<dependencies>
-		<!-- spring boot dependencies -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+    <dependencies>
+        <!-- spring boot dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
-		<!-- databases dependencies -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
+        <!-- hibernate dependencies -->
 
-		<!-- other dependencies -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+        <!-- databases dependefncies -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
-		<!-- test dependencies -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <!-- other dependencies -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
 
-	</dependencies>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    </dependencies>
 
-	<profiles>
-		<profile>
-			<id>coverage</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>prepare-agent</id>
-								<goals>
-									<goal>prepare-agent</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>sonar</id>
-			<properties>
-				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-				<sonar.organization>magicsoup</sonar.organization>
-				<sonar.projectKey>MagicSoup_java-spring-data</sonar.projectKey>
-				<sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
-				<sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
-				<sonar.report>${aggregate.report.dir}</sonar.report>
-			</properties>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.sonarsource.scanner.maven</groupId>
-						<artifactId>sonar-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sonar</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sonar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.hibernate</groupId>
+                            <artifactId>hibernate-jpamodelgen</artifactId>
+                            <version>${hibernate.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArguments>
+                        <processor>
+                            org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor,lombok.launch.AnnotationProcessorHider$AnnotationProcessor,org.mapstruct.ap.MappingProcessor
+                        </processor>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>coverage</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>sonar</id>
+            <properties>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+                <sonar.organization>magicsoup</sonar.organization>
+                <sonar.projectKey>MagicSoup_java-spring-data</sonar.projectKey>
+                <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
+                <sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
+                <sonar.report>${aggregate.report.dir}</sonar.report>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sonar</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sonar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
