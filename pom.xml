@@ -26,7 +26,6 @@
         <code.coverage.exclusions>
             **/com/magicsoup/spring/data/SpringDataApplication.java
         </code.coverage.exclusions>
-        <aggregate.report.dir>librairy-test/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
     </properties>
 
     <dependencies>
@@ -161,7 +160,6 @@
                 <sonar.projectKey>MagicSoup_java-spring-data</sonar.projectKey>
                 <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
                 <sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
-                <sonar.report>${aggregate.report.dir}</sonar.report>
             </properties>
             <activation>
                 <activeByDefault>false</activeByDefault>
