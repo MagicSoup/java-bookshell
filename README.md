@@ -7,6 +7,8 @@ Using :
 - Spring Data JPA 3.3.1
 - Lombok 1.18.32
 - Mapstruct 1.5.5.Final
+- Hibernate 6.5.2.Final
+- Hibernate JPA Model Gen 6.5.2.Final
 
 Install :
 - Run maven command to build : mvn clean install
