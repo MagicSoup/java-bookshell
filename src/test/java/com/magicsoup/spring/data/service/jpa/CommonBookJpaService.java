@@ -1,29 +1,22 @@
-package com.magicsoup.spring.data.service;
+package com.magicsoup.spring.data.service.jpa;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import com.magicsoup.spring.data.config.DefaultSpringBootTest;
 import com.magicsoup.spring.data.model.bean.BookBean;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.magicsoup.spring.data.service.IBookService;
 
-@DefaultSpringBootTest
-class BookServiceTest {
+public class CommonBookJpaService {
 
-    private static final int HEAD_FIRST_JAVA_ID = 1;
+    protected static final int HEAD_FIRST_JAVA_ID = 1;
 
-    private static final int KATHY_SIERRA_ID = 1;
+    protected static final int KATHY_SIERRA_ID = 1;
 
-    @Autowired
-    private BookService bookService;
-
-    @Test
-    void findById() {
+    protected void findByBookId(IBookService service, Integer bookId) {
 
         // Execute
-        BookBean book = bookService.findById(HEAD_FIRST_JAVA_ID);
+        BookBean book = service.findByBookId(bookId);
 
         // Assert && Verify
         assertThat(book).isNotNull().satisfies(result -> {
@@ -35,11 +28,10 @@ class BookServiceTest {
         });
     }
 
-    @Test
-    void findByAuthorId() {
+    protected void findByAuthorId(IBookService service, Integer authorId) {
 
         // Execute
-        List<BookBean> bookList = bookService.findByAuthorId(KATHY_SIERRA_ID);
+        List<BookBean> bookList = service.findByAuthorId(authorId);
 
         // Assert && Verify
         assertThat(bookList).hasSize(3).satisfies(books -> {

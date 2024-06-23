@@ -1,4 +1,4 @@
-package com.magicsoup.spring.data.repository;
+package com.magicsoup.spring.data.repository.jpa.specification;
 
 import jakarta.persistence.criteria.JoinType;
 import jakarta.persistence.criteria.Path;
@@ -8,8 +8,17 @@ import com.magicsoup.spring.data.model.entity.BookEntity;
 import com.magicsoup.spring.data.model.entity.BookEntity_;
 import org.springframework.data.jpa.domain.Specification;
 
-public class BookSpecification {
+/**
+ * JPA Specification implementation to find books
+ */
+public class BookJpaSpecification {
 
+    /**
+     * Specification to find books by author id
+     *
+     * @param authorId the author id
+     * @return the specification to find books by author id
+     */
     public static Specification<BookEntity> byAuthorId(Integer authorId) {
         return (root, query, criteriaBuilder) -> {
             root.fetch(BookEntity_.authors, JoinType.INNER);
@@ -18,11 +27,17 @@ public class BookSpecification {
         };
     }
 
-    public static Specification<BookEntity> byId(Integer id) {
+    /**
+     * Specification to find a book by id
+     *
+     * @param bookId the book id
+     * @return the specification to find a book by id
+     */
+    public static Specification<BookEntity> byBookId(Integer bookId) {
         return (root, query, criteriaBuilder) -> {
             root.fetch(BookEntity_.authors, JoinType.INNER);
             Path<Integer> bookIdPath = root.get(BookEntity_.ID);
-            return criteriaBuilder.equal(bookIdPath, id);
+            return criteriaBuilder.equal(bookIdPath, bookId);
         };
     }
 }
