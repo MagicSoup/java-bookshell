@@ -15,20 +15,19 @@ import com.magicsoup.spring.data.model.entity.AuthorEntity;
 import com.magicsoup.spring.data.model.entity.AuthorEntity_;
 import com.magicsoup.spring.data.model.entity.BookEntity;
 import com.magicsoup.spring.data.model.entity.BookEntity_;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 
 /**
  * JPA critera implementation to find books
  */
+@RequiredArgsConstructor
 @Repository
 public class BookJpaCriteriaRepository {
 
-    @Autowired
-    private EntityManager entityManager;
-
-
+    private final EntityManager entityManager;
+    
     @Nullable
     public BookEntity findByBookId(Integer bookId) {
 

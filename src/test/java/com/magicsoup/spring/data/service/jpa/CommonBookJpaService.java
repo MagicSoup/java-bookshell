@@ -13,7 +13,7 @@ public class CommonBookJpaService {
 
     protected static final int KATHY_SIERRA_ID = 1;
 
-    protected void findByBookId(IBookService service, Integer bookId) {
+    protected BookBean testFindByBookId(IBookService service, Integer bookId) {
 
         // Execute
         BookBean book = service.findByBookId(bookId);
@@ -26,9 +26,11 @@ public class CommonBookJpaService {
                             List.of("Kathy Sierra",
                                     "Bert Bates"));
         });
+
+        return book;
     }
 
-    protected void findByAuthorId(IBookService service, Integer authorId) {
+    protected List<BookBean> testFindByAuthorId(IBookService service, Integer authorId) {
 
         // Execute
         List<BookBean> bookList = service.findByAuthorId(authorId);
@@ -41,5 +43,7 @@ public class CommonBookJpaService {
                                     "Head First Servlets and JSP",
                                     "OCA/OCP Java SE 7 Programmer"));
         });
+
+        return bookList;
     }
 }

@@ -11,7 +11,10 @@ import org.springframework.data.jpa.domain.Specification;
 /**
  * JPA Specification implementation to find books
  */
-public class BookJpaSpecification {
+public final class BookJpaSpecification {
+
+    private BookJpaSpecification() {
+    }
 
     /**
      * Specification to find books by author id

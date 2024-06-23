@@ -24,6 +24,8 @@
         <surefire.version>2.22.2</surefire.version>
         <!-- sonar plugins-->
         <code.coverage.exclusions>
+            **/*Bean.java,
+            **/*Entity.java,
             **/com/magicsoup/spring/data/SpringDataApplication.java
         </code.coverage.exclusions>
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
