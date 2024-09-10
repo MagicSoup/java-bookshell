@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.magicsoup.spring.data</groupId>
-    <artifactId>SpringData</artifactId>
+    <artifactId>java-bookshell</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringData</name>
     <description>Example of different ways of managing datas throught spring framework</description>
