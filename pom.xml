@@ -8,10 +8,10 @@
         <version>3.3.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.magicsoup.spring.data</groupId>
-    <artifactId>java-bookshell</artifactId>
+    <groupId>com.magicsoup.bookshelf</groupId>
+    <artifactId>bookshelf-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringData</name>
+    <name>BookShelt</name>
     <description>Example of different ways of managing datas throught spring framework</description>
 
     <properties>
@@ -26,7 +26,7 @@
         <code.coverage.exclusions>
             **/*Bean.java,
             **/*Entity.java,
-            **/com/magicsoup/spring/data/SpringDataApplication.java
+            **/com/magicsoup/bookshelf/BookshelfApplication.java
         </code.coverage.exclusions>
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
     </properties>
