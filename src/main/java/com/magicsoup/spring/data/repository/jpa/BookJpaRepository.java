@@ -2,11 +2,12 @@ package com.magicsoup.spring.data.repository.jpa;
 
 import java.util.List;
 
-import com.magicsoup.spring.data.model.entity.BookEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.lang.Nullable;
+
+import com.magicsoup.spring.data.model.entity.BookEntity;
 
 /**
  * JPA repository implementation to find books

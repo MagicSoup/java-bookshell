@@ -1,9 +1,12 @@
 package com.magicsoup.spring.data.service.jpa.specification;
 
-import jakarta.annotation.Nullable;
-
 import java.util.List;
 import java.util.Optional;
+
+import jakarta.annotation.Nullable;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import com.magicsoup.spring.data.mapper.BookMapper;
 import com.magicsoup.spring.data.model.bean.BookBean;
@@ -11,8 +14,6 @@ import com.magicsoup.spring.data.model.entity.BookEntity;
 import com.magicsoup.spring.data.repository.jpa.specification.BookJpaSpecification;
 import com.magicsoup.spring.data.repository.jpa.specification.BookJpaSpecificationRepository;
 import com.magicsoup.spring.data.service.IBookService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 /**
  * JPA Specification service implementation to find books

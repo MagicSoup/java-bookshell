@@ -2,8 +2,9 @@ package com.magicsoup.spring.data.service;
 
 import java.util.List;
 
-import com.magicsoup.spring.data.model.bean.BookBean;
 import org.springframework.lang.Nullable;
+
+import com.magicsoup.spring.data.model.bean.BookBean;
 
 /**
  * Service to find books.

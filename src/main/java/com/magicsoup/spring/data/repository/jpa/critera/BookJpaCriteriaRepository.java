@@ -1,20 +1,29 @@
 package com.magicsoup.spring.data.repository.jpa.critera;
 
-import com.magicsoup.spring.data.model.entity.AuthorEntity;
-import com.magicsoup.spring.data.model.entity.AuthorEntity_;
-import com.magicsoup.spring.data.model.entity.BookEntity;
-import com.magicsoup.spring.data.model.entity.BookEntity_;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Tuple;
-import jakarta.persistence.criteria.*;
-import lombok.RequiredArgsConstructor;
-import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Repository;
-
 import java.time.temporal.ChronoField;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Tuple;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Expression;
+import jakarta.persistence.criteria.Fetch;
+import jakarta.persistence.criteria.Join;
+import jakarta.persistence.criteria.JoinType;
+import jakarta.persistence.criteria.Path;
+import jakarta.persistence.criteria.Root;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Repository;
+
+import com.magicsoup.spring.data.model.entity.AuthorEntity;
+import com.magicsoup.spring.data.model.entity.AuthorEntity_;
+import com.magicsoup.spring.data.model.entity.BookEntity;
+import com.magicsoup.spring.data.model.entity.BookEntity_;
 
 /**
  * JPA critera implementation to find books

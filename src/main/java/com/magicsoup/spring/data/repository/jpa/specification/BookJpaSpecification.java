@@ -3,10 +3,11 @@ package com.magicsoup.spring.data.repository.jpa.specification;
 import jakarta.persistence.criteria.JoinType;
 import jakarta.persistence.criteria.Path;
 
+import org.springframework.data.jpa.domain.Specification;
+
 import com.magicsoup.spring.data.model.entity.AuthorEntity_;
 import com.magicsoup.spring.data.model.entity.BookEntity;
 import com.magicsoup.spring.data.model.entity.BookEntity_;
-import org.springframework.data.jpa.domain.Specification;
 
 /**
  * JPA Specification implementation to find books

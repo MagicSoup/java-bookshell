@@ -4,11 +4,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.magicsoup.spring.data.config.DefaultSpringBootTest;
 import com.magicsoup.spring.data.model.bean.BookBean;
 import com.magicsoup.spring.data.service.jpa.CommonBookJpaService;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @DefaultSpringBootTest
 class BookJpaSpecificationServiceTest extends CommonBookJpaService {

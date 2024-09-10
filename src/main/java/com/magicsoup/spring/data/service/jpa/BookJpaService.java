@@ -3,14 +3,15 @@ package com.magicsoup.spring.data.service.jpa;
 import java.util.List;
 import java.util.Optional;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Service;
+
 import com.magicsoup.spring.data.mapper.BookMapper;
 import com.magicsoup.spring.data.model.bean.BookBean;
 import com.magicsoup.spring.data.model.entity.BookEntity;
 import com.magicsoup.spring.data.repository.jpa.BookJpaRepository;
 import com.magicsoup.spring.data.service.IBookService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Service;
 
 /**
  * JPA service implementation to find books

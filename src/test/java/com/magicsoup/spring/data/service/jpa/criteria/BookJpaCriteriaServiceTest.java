@@ -1,18 +1,19 @@
 package com.magicsoup.spring.data.service.jpa.criteria;
 
-import com.magicsoup.spring.data.config.DefaultSpringBootTest;
-import com.magicsoup.spring.data.model.bean.BookBean;
-import com.magicsoup.spring.data.service.jpa.CommonBookJpaService;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.springframework.beans.factory.annotation.Autowired;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.temporal.ChronoField;
 import java.util.List;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.magicsoup.spring.data.config.DefaultSpringBootTest;
+import com.magicsoup.spring.data.model.bean.BookBean;
+import com.magicsoup.spring.data.service.jpa.CommonBookJpaService;
 
 @DefaultSpringBootTest
 class BookJpaCriteriaServiceTest extends CommonBookJpaService {

@@ -1,18 +1,19 @@
 package com.magicsoup.spring.data.service.jpa.criteria;
 
+import java.time.temporal.ChronoField;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Service;
+
 import com.magicsoup.spring.data.mapper.BookMapper;
 import com.magicsoup.spring.data.model.bean.BookBean;
 import com.magicsoup.spring.data.model.entity.BookEntity;
 import com.magicsoup.spring.data.repository.jpa.critera.BookJpaCriteriaRepository;
 import com.magicsoup.spring.data.service.IBookService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Service;
-
-import java.time.temporal.ChronoField;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * JPA Criteria service implementation to find books
