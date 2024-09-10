@@ -14,7 +14,7 @@ public interface BookMapper {
 
     BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
 
-    List<BookBean> mapBookList(List<BookEntity> books);
+    List<BookBean> mapBookList(Iterable<BookEntity> books);
 
     BookBean mapBook(BookEntity book);
 

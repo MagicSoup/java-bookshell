@@ -25,6 +25,12 @@ public class BookJpaSpecificationService implements IBookService {
     private final BookJpaSpecificationRepository bookJpaSpecificationRepository;
 
     @Nullable
+    public List<BookBean> getAll() {
+        Iterable<BookEntity> books = bookJpaSpecificationRepository.findAll();
+        return BookMapper.INSTANCE.mapBookList(books);
+    }
+
+    @Nullable
     public BookBean findByBookId(Integer bookId) {
 
         Optional<BookEntity> book = bookJpaSpecificationRepository.findOne(BookJpaSpecification.byBookId(bookId));

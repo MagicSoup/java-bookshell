@@ -16,11 +16,15 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * The type Book entity.
  */
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "book")
